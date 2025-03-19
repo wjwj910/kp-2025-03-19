@@ -2,6 +2,7 @@ package com.back.domain.home.home.service
 
 import org.springframework.stereotype.Service
 import java.lang.Thread.sleep
+import java.net.InetAddress
 
 @Service
 class HomeService {
@@ -10,6 +11,9 @@ class HomeService {
     }
 
     fun getGreetings(): String {
-        return "Hello, World!"
+        // 로컬 머신의 InetAddress 객체를 가져옴
+        val inetAddress = InetAddress.getLocalHost()
+
+        return "Hello, World!, $inetAddress"
     }
 }
